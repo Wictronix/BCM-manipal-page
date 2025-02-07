@@ -312,84 +312,94 @@
                                     your success today</p><br>
                             </div>
 
-                            <form name="form" id="myForm">
-                                <!-- <label>Name<span class="required">*</span></label> -->
-                                <div> <input type="text" name="full_name" id="full_name" class="form-control"
-                                        placeholder="Enter Your Name" required> </div>
+                            <form method="POST" name="form" id="myForm">
+                                <!-- Name -->
+                                <div>
+                                    <input type="text" name="full_name" id="full_name" class="form-control"
+                                        placeholder="Enter Your Name" required>
+                                </div>
 
-                                <!-- <label>Email ID <span class="required">*</span></label> -->
-                                <div> <input type="email" name="email" id="email" class="form-control"
-                                        placeholder="Enter Your Email" required> </div>
+                                <!-- Email -->
+                                <div>
+                                    <input type="email" name="email" id="email" class="form-control"
+                                        placeholder="Enter Your Email" required>
+                                </div>
 
-                                <!-- <label>Phone <span class="required">*</span></label> -->
-                                <div> <input type="tel" name="phone" id="phone" class="form-control"
-                                        placeholder="Enter Mobile Number" required> </div>
+                                <!-- Phone -->
+                                <div>
+                                    <input type="tel" name="phone" id="phone" class="form-control"
+                                        placeholder="Enter Mobile Number" required>
+                                </div>
 
-                                <!-- <label>Course <span class="required">*</span></label> -->
-
-
-                                <div> <select name="course" class="form-control" id="specialization"
-                                        style="margin-top:10px!important;" required>
+                                <!-- Course Selection -->
+                                <div>
+                                    <select name="course" class="form-control" id="course" required>
                                         <option value="" selected disabled>Select Your Course</option>
                                         <option value="BBA">BBA</option>
-                                        <option value="BCOM">BCOM</option>
-
+                                        <option value="BCOM">B.Com</option>
                                         <option value="BCA">BCA</option>
                                         <option value="MBA">MBA</option>
-                                        <option value="MCOM">MCOM</option>
-                                        <option value="MJMC">MJMC</option>
+                                        <option value="MCOM">M.Com</option>
+                                        <option value="MJMC">MA.JMC</option>
                                         <option value="MCA">MCA</option>
-
+                                        <option value="BA">BA</option>
+                                        <option value="MA in English">MA in English</option>
+                                        <option value="MA in Sociology">MA in Sociology</option>
+                                        <option value="MA in Political Science">MA in Political Science</option>
                                     </select>
                                 </div>
-                                <!-- <label>State <span class="required">*</span></label> -->
-                                <div> <select name="state" class="form-control" id="state" required>
+
+                                <!-- State Selection -->
+                                <div>
+                                    <select name="state" class="form-control" id="state" required>
                                         <option value="" hidden>Select Your State</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                                         <option value="Assam">Assam</option>
-                                        <option value="Bihar">Bihar </option>
+                                        <option value="Bihar">Bihar</option>
                                         <option value="Chhattisgarh">Chhattisgarh</option>
                                         <option value="Delhi">Delhi</option>
                                         <option value="Goa">Goa</option>
-                                        <option value="Gujarat">Gujarat </option>
+                                        <option value="Gujarat">Gujarat</option>
                                         <option value="Haryana">Haryana</option>
                                         <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                        <option value="Jharkhand">Jharkhand </option>
+                                        <option value="Jharkhand">Jharkhand</option>
                                         <option value="Karnataka">Karnataka</option>
                                         <option value="Kerala">Kerala</option>
-                                        <option value="Madhya Pradesh">Madhya Pradesh </option>
+                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
                                         <option value="Maharashtra">Maharashtra</option>
                                         <option value="Manipur">Manipur</option>
-                                        <option value="Meghalaya">Meghalaya </option>
+                                        <option value="Meghalaya">Meghalaya</option>
                                         <option value="Mizoram">Mizoram</option>
                                         <option value="Nagaland">Nagaland</option>
-                                        <option value="Odisha">Odisha </option>
+                                        <option value="Odisha">Odisha</option>
                                         <option value="Punjab">Punjab</option>
                                         <option value="Rajasthan">Rajasthan</option>
-                                        <option value="Sikkim">Sikkim </option>
+                                        <option value="Sikkim">Sikkim</option>
                                         <option value="Tamil Nadu">Tamil Nadu</option>
                                         <option value="Telangana">Telangana</option>
-                                        <option value="Tripura">Tripura </option>
+                                        <option value="Tripura">Tripura</option>
                                         <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                        <option value="Uttarakhand">Uttarakhand </option>
-                                        <option value="West Bengal">West Bengal </option>
+                                        <option value="Uttarakhand">Uttarakhand</option>
+                                        <option value="West Bengal">West Bengal</option>
                                     </select>
                                 </div>
 
+                                <!-- Enquired University -->
+                                <div>
+                                    <select name="enquired_university" class="form-control" id="enquired_university"
+                                        required>
+                                        <option value="" selected disabled>Select Enquired University</option>
+                                        <option value="MUJ">MUJ</option>
+                                        <option value="SMU">SMU</option>
+                                    </select>
+                                </div>
 
-                                <input type="hidden" name="source" id="source" class="form-control" value="Manipal"
-                                    required>
-                                <input type="hidden" name="form_name" id="form_name" class="form-control" value="Home">
-                                <input type="hidden" name="sub_source" id="sub_source" class="form-control" value="">
-                                <input type="hidden" name="utm_source" id="utm_source" class="form-control" value="">
-                                <input type="hidden" name="utm_campaign" id="utm_campaign" class="form-control"
-                                    value="">
-                                <input type="hidden" name="utm_medium" id="utm_medium" class="form-control" value="">
-                                <input type="hidden" name="utm_term" id="utm_term" class="form-control" value="">
-                                <input type="hidden" name="page_url" id="page_url" class="form-control" value="">
+                                <!-- Hidden Fields -->
+                                <input type="hidden" name="source" id="source" value="Agents">
+                                <input type="hidden" name="source_medium" id="source_medium" value="BCMT">
 
-
+                                <!-- Submit Button -->
                                 <button type="submit" name="submit" value="submit" class="sub-btn"
                                     id="button">Submit</button>
                             </form>
@@ -403,6 +413,89 @@
         </div>
     </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById('myForm');
+
+            if (!form) {
+                console.error("Error: Form element not found!");
+                return;
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent direct form submission
+
+                // Get form data
+                const formData = new FormData(form);
+
+                // Ensure phone number is formatted correctly
+                let phone = formData.get("phone").trim();
+                if (!phone.startsWith("+91")) {
+                    phone = "+91-" + phone;  // Add country code if missing
+                }
+
+                // Ensure course is valid
+                const validCourses = ["BBA", "B.Com", "BCA", "MBA", "M.Com", "MA.JMC", "MCA", "BA", "MA in English", "MA in Sociology", "MA in Political Science"];
+                let course = formData.get("course").trim();
+                if (!validCourses.includes(course)) {
+                    alert("Invalid course selection. Please choose a valid course.");
+                    return;
+                }
+
+                // Ensure university selection
+                let university = formData.get("enquired_university").trim();
+                if (!["MUJ", "SMU"].includes(university)) {
+                    alert("Invalid university selection. Please choose MUJ or SMU.");
+                    return;
+                }
+
+                // Construct LeadSquared API JSON request
+                const leadSquaredData = [
+                    { "Attribute": "FirstName", "Value": formData.get("full_name").trim() },
+                    { "Attribute": "EmailAddress", "Value": formData.get("email").trim() },
+                    { "Attribute": "Phone", "Value": phone },
+                    { "Attribute": "mx_course_applying_for", "Value": course },
+                    { "Attribute": "Source", "Value": "Agents" },
+                    { "Attribute": "Source Medium", "Value": "BCMT" },
+                    { "Attribute": "mx_Mobile", "Value": phone },
+                    { "Attribute": "mx_Enquired_University", "Value": university }
+                ];
+
+                // LeadSquared API URL
+                const leadsquaredAPI = "https://lapps-in21.leadsquared.com/executebylapptoken?name=da_54036_e738136c&stage=Live&xapikey=402809e910794df692e68da913bfee87";
+
+                // Send data to LeadSquared API
+                fetch(leadsquaredAPI, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-api-key': '402809e910794df692e68da913bfee87',
+                    },
+                    body: JSON.stringify(leadSquaredData)
+                })
+                    .then(response => response.json())
+                    .then(responseData => {
+                        console.log("Response from LeadSquared API:", responseData);
+                        if (responseData.statusCode === 200 || responseData.message.includes("Lead Already Exists")) {
+                            // ✅ Dynamically set the action to NoCodeForm
+                            form.setAttribute("action", "https://nocodeform.io/f/67a630a817a9f3b9a5439737");
+
+                            // ✅ Ensure proper form submission
+                            HTMLFormElement.prototype.submit.call(form);
+                        } else {
+                            alert("LeadSquared API Error: " + responseData.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error sending data to LeadSquared API:", error);
+                        alert("Error sending data to LeadSquared API. Please check the console.");
+                    });
+            });
+        });
+    </script>
+
+
+
     <div class="d-block d-lg-none">
         <div id="form">
             <div class="frm-heading">
@@ -411,7 +504,7 @@
                     your success today</p><br>
             </div>
 
-            <form>
+            <form action="https://nocodeform.io/f/67a630a817a9f3b9a5439737" method="post" name="form" id="myMobileForm">
                 <!-- <label>Name<span class="required">*</span></label> -->
                 <div> <input type="text" name="full_name" id="full_name" class="form-control"
                         placeholder="Enter Your Name" required> </div>
@@ -1044,104 +1137,6 @@
    your success today</p><br>
  </div> -->
 
-                        <form>
-
-                            <div class="row">
-                                <div class="col-md-4" id="ftr-frm">
-                                    <!-- <label>Name<span class="required">*</span></label> -->
-                                    <input type="text" name="full_name" id="full_name" class="form-control"
-                                        placeholder="Enter Your Name" required>
-                                </div>
-
-
-                                <div class="col-md-4" id="ftr-frm">
-                                    <!-- <label>Email ID <span class="required">*</span></label> -->
-                                    <input type="email" name="email" id="email" class="form-control"
-                                        placeholder="Enter Your Email" required>
-
-                                </div>
-
-
-                                <div class="col-md-4" id="ftr-frm">
-                                    <!-- <label>Phone <span class="required">*</span></label> -->
-                                    <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" maxlength="10"
-                                        class="form-control" placeholder="Enter 10-digit Mobile Number" required>
-                                </div>
-
-                                <div class="col-md-4" id="ftr-frm">
-                                    <!-- <label>course <span class="required">*</span></label> -->
-                                    <select name="course" class="form-control" id="specialization" required>
-                                        <option value="" selected disabled>Select Your Course</option>
-                                        <option value="BBA">BBA</option>
-                                        <option value="BCOM">BCOM</option>
-                                        <option value="BCA">BCA</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="MCOM">MCOM</option>
-                                        <option value="MJMC">MJMC</option>
-                                        <option value="MCA">MCA</option>
-
-                                    </select>
-                                </div>
-
-
-                                <div class="col-md-4" id="ftr-frm">
-                                    <!-- <label>State <span class="required">*</span></label> -->
-                                    <select name="state" class="form-control" id="state" required>
-                                        <option value="" hidden>Select Your State</option>
-                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                        <option value="Assam">Assam</option>
-                                        <option value="Bihar">Bihar </option>
-                                        <option value="Chhattisgarh">Chhattisgarh</option>
-                                        <option value="Delhi">Delhi</option>
-                                        <option value="Goa">Goa</option>
-                                        <option value="Gujarat">Gujarat </option>
-                                        <option value="Haryana">Haryana</option>
-                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                        <option value="Jharkhand">Jharkhand </option>
-                                        <option value="Karnataka">Karnataka</option>
-                                        <option value="Kerala">Kerala</option>
-                                        <option value="Madhya Pradesh">Madhya Pradesh </option>
-                                        <option value="Maharashtra">Maharashtra</option>
-                                        <option value="Manipur">Manipur</option>
-                                        <option value="Meghalaya">Meghalaya </option>
-                                        <option value="Mizoram">Mizoram</option>
-                                        <option value="Nagaland">Nagaland</option>
-                                        <option value="Odisha">Odisha </option>
-                                        <option value="Punjab">Punjab</option>
-                                        <option value="Rajasthan">Rajasthan</option>
-                                        <option value="Sikkim">Sikkim </option>
-                                        <option value="Tamil Nadu">Tamil Nadu</option>
-                                        <option value="Telangana">Telangana</option>
-                                        <option value="Tripura">Tripura </option>
-                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                        <option value="Uttarakhand">Uttarakhand </option>
-                                        <option value="West Bengal">West Bengal </option>
-                                    </select>
-                                </div>
-
-
-
-                                <div class="col-md-4" id="ftr-frm">
-
-                                    <button type="submit" name="submit" value="submit" class="sub-btn-footer"
-                                        id="button">Submit</button>
-                                </div>
-                                <input type="hidden" name="source" id="source" class="form-control" value="Manipal"
-                                    required>
-                                <input type="hidden" name="form_name" id="form_name" class="form-control"
-                                    value="Footer">
-                                <input type="hidden" name="sub_source" id="sub_source" class="form-control" value="">
-                                <input type="hidden" name="utm_source" id="utm_source" class="form-control" value="">
-                                <input type="hidden" name="utm_campaign" id="utm_campaign" class="form-control"
-                                    value="">
-                                <input type="hidden" name="utm_medium" id="utm_medium" class="form-control" value="">
-                                <input type="hidden" name="utm_term" id="utm_term" class="form-control" value="">
-                                <input type="hidden" name="page_url" id="page_url" class="form-control" value="">
-                                <br>
-
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -1168,7 +1163,8 @@
                             </h5>
                         </div><br>
 
-                        <form>
+                        <form action="https://nocodeform.io/f/67a630a817a9f3b9a5439737" method="post" name="form"
+                            id="enquiry-form">
 
                             <div><label>Name<span class="required">*</span></label>
                                 <input type="text" name="full_name" id="full_name" class="form-control"
@@ -1269,87 +1265,10 @@
                             your success today</p><br>
                     </div>
 
-                    <form>
-                        <!-- <label>Name<span class="required">*</span></label> -->
-                        <div> <input type="text" name="full_name" id="full_name" class="form-control"
-                                placeholder="Enter Your Name" required> </div>
-
-                        <!-- <label>Email ID <span class="required">*</span></label> -->
-                        <div> <input type="email" name="email" id="email" class="form-control"
-                                placeholder="Enter Your Email" required> </div>
-
-                        <!-- <label>Phone <span class="required">*</span></label> -->
-                        <div> <input type="tel" name="phone" id="phone" class="form-control"
-                                placeholder="Enter Mobile Number" required> </div>
-
-                        <!-- <label>Course <span class="required">*</span></label> -->
-
-
-                        <div> <select name="course" class="form-control" id="specialization"
-                                style="margin-top:10px!important;" required>
-                                <option value="" selected disabled>Select Your Course</option>
-                                <option value="BBA">BBA</option>
-                                <option value="BCOM">BCOM</option>
-
-                                <option value="BCA">BCA</option>
-                                <option value="MBA">MBA</option>
-                                <option value="MCOM">MCOM</option>
-                                <option value="MJMC">MJMC</option>
-                                <option value="MCA">MCA</option>
-
-                            </select>
-                        </div>
-                        <!-- <label>State <span class="required">*</span></label> -->
-                        <div> <select name="state" class="form-control" id="state" required>
-                                <option value="" hidden>Select Your State</option>
-                                <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                <option value="Assam">Assam</option>
-                                <option value="Bihar">Bihar </option>
-                                <option value="Chhattisgarh">Chhattisgarh</option>
-                                <option value="Delhi">Delhi</option>
-                                <option value="Goa">Goa</option>
-                                <option value="Gujarat">Gujarat </option>
-                                <option value="Haryana">Haryana</option>
-                                <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                <option value="Jharkhand">Jharkhand </option>
-                                <option value="Karnataka">Karnataka</option>
-                                <option value="Kerala">Kerala</option>
-                                <option value="Madhya Pradesh">Madhya Pradesh </option>
-                                <option value="Maharashtra">Maharashtra</option>
-                                <option value="Manipur">Manipur</option>
-                                <option value="Meghalaya">Meghalaya </option>
-                                <option value="Mizoram">Mizoram</option>
-                                <option value="Nagaland">Nagaland</option>
-                                <option value="Odisha">Odisha </option>
-                                <option value="Punjab">Punjab</option>
-                                <option value="Rajasthan">Rajasthan</option>
-                                <option value="Sikkim">Sikkim </option>
-                                <option value="Tamil Nadu">Tamil Nadu</option>
-                                <option value="Telangana">Telangana</option>
-                                <option value="Tripura">Tripura </option>
-                                <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                <option value="Uttarakhand">Uttarakhand </option>
-                                <option value="West Bengal">West Bengal </option>
-                            </select>
-                        </div>
-
-
-                        <input type="hidden" name="source" id="source" class="form-control" value="Manipal" required>
-                        <input type="hidden" name="form_name" id="form_name" class="form-control" value="Home">
-                        <input type="hidden" name="sub_source" id="sub_source" class="form-control" value="">
-                        <input type="hidden" name="utm_source" id="utm_source" class="form-control" value="">
-                        <input type="hidden" name="utm_campaign" id="utm_campaign" class="form-control" value="">
-                        <input type="hidden" name="utm_medium" id="utm_medium" class="form-control" value="">
-                        <input type="hidden" name="utm_term" id="utm_term" class="form-control" value="">
-                        <input type="hidden" name="page_url" id="page_url" class="form-control" value="">
-
-
-                        <button type="submit" name="submit" value="submit" class="sub-btn" id="button">Submit</button>
-                    </form>
                 </div>
             </div>
         </div>
+
 
         <script>
             function openPopup() {
@@ -1371,45 +1290,6 @@
             function closedownloadbrochure() {
                 document.getElementById('downloadbrochuremodal').style.display = 'none';
             }
-        </script>
-
-        <script>
-            const submitBtn = document.getElementById('downloadbrochurebtn');
-            const courseSelect = document.getElementById('courseSelect');
-            const courseForm = document.getElementById('enquiry-form');
-
-            submitBtn.addEventListener('click', function (event) {
-                const selectedCourse = courseSelect.value;
-                if (selectedCourse) {
-                    // Open PDF immediately
-                    const pdfFileName = `images/${selectedCourse}.pdf`;
-                    window.open(pdfFileName, '_blank');
-
-                    // Delay form submission after 2 minutes (120000 milliseconds)
-                    setTimeout(function () {
-                        const formData = new FormData(courseForm); // Collect form data
-
-                        // Append the selected course to the form data
-                        formData.append('selected_course', selectedCourse);
-
-                        // Send form data to mail.php for processing
-                        fetch('mail.php', {
-                            method: 'POST',
-                            body: formData
-                        })
-                            .then(response => {
-                                if (!response.ok) {
-                                    console.error('Error submitting form data');
-                                    // Handle error if form submission fails
-                                }
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                                // Handle error if fetch request fails
-                            });
-                    }, 60000); // 2 minutes delay
-                }
-            });
         </script>
 
     </body>
@@ -1441,47 +1321,6 @@
         document.getElementById("currentYear").textContent = currentYear;
     </script>
 
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const form = document.getElementById("myForm");
-
-            if (form) {
-                form.removeEventListener("submit", handleFormSubmit); // Ensure no duplicate listeners
-                form.addEventListener("submit", handleFormSubmit);
-            }
-        });
-
-        async function handleFormSubmit(event) {
-            event.preventDefault(); // Prevent page reload
-            console.log("Form submission intercepted");
-
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData.entries());
-
-            console.log("Form data to send:", data);
-
-            try {
-                const response = await fetch("/submit", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(data),
-                });
-
-                const result = await response.json();
-                console.log("Backend response:", result);
-
-                if (result.message) {
-                    alert(result.message);
-                }
-
-            } catch (error) {
-                console.error("Error during form submission:", error);
-                alert("Error submitting form");
-            }
-        }
-
-    </script>
 
     <script async>
         function myFunction() {
@@ -1575,122 +1414,11 @@
         });
     </script>
 
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-            // Function to get the value of a URL parameter
-            function getQueryParam(param) {
-                var searchParams = new URLSearchParams(window.location.search);
-                return searchParams.has(param) ? searchParams.get(param) :
-                    null; // Return null if the parameter is not found
-            }
 
-            // Function to set values for all forms
-            function setUTMValues() {
-                var utmParams = ['source', 'sub_source', 'utm_source', 'utm_campaign', 'utm_medium', 'utm_term'];
-                utmParams.forEach(function (param) {
-                    var inputFields = document.querySelectorAll('input[name="' + param + '"]');
-                    inputFields.forEach(function (input) {
-                        var paramValue = getQueryParam(param);
-                        if (paramValue !== null) { // Only set the value if the parameter exists
-                            input.value = paramValue;
-                        }
-                    });
-                });
-            }
-
-            setUTMValues();
-        });
-    </script>
-
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-            // Function to get the value of a URL parameter
-            function getQueryParam(param) {
-                var searchParams = new URLSearchParams(window.location.search);
-                return searchParams.get(param) || '';
-            }
-
-            // Get all forms on the page
-            var forms = document.querySelectorAll('form');
-
-            forms.forEach(function (form) {
-
-                // Get the current URL
-                const currentURL = window.location.href;
-
-
-                form.querySelector('#page_url').value = currentURL;
-            });
-        });
-    </script>
 </body>
 
+</html>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Initialize intl-tel-input for all phone fields
-        const phoneInputs = document.querySelectorAll('input[type="tel"]');
-
-        phoneInputs.forEach(input => {
-            // Create an error message element
-            const errorMessage = document.createElement("span");
-            errorMessage.style.color = "red"; // Optional: Style the error message
-            errorMessage.style.display = "none"; // Initially hidden
-            input.parentNode.insertBefore(errorMessage, input); // Append error message above the input
-
-            const iti = window.intlTelInput(input, {
-                initialCountry: "in", // Default country: India
-                autoPlaceholder: "polite", // Show a placeholder for the format
-                separateDialCode: true, // Display country code separately
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js", // Utilities for validation
-            });
-
-            // Validate phone number on input (real-time validation)
-            input.addEventListener("input", function () {
-                const phoneValue = input.value.trim();
-
-                // Check if phone number contains non-numeric characters or letters
-                if (/[a-zA-Z]/.test(phoneValue)) {
-                    errorMessage.style.display = "block"; // Show error
-                    errorMessage.textContent = "Please enter a valid phone number (only numbers, no letters).";
-                    input.value = phoneValue.replace(/[a-zA-Z]/g, ''); // Remove letters
-                } else {
-                    errorMessage.style.display = "none"; // Hide error message if valid input
-                }
-            });
-
-            // Validate on blur (when user leaves the input field)
-            input.addEventListener("blur", function () {
-                const phoneValue = input.value.trim();
-                if (phoneValue) {
-                    if (!iti.isValidNumber()) {
-                        errorMessage.style.display = "block"; // Show error
-                        errorMessage.textContent = "Invalid phone number.";
-                        input.value = ''; // Clear invalid phone number
-                        input.focus(); // Focus back to input field
-                    } else {
-                        errorMessage.style.display = "none"; // Hide error message if valid number
-                        // Optionally, you can log or use the full international number
-                        console.log("Valid Number:", iti.getNumber());
-                    }
-                }
-            });
-
-            // Handle form submission to include the full phone number
-            input.closest('form').addEventListener('submit', function (e) {
-                const phoneValue = input.value.trim();
-                if (!iti.isValidNumber() || /[a-zA-Z]/.test(phoneValue)) {
-                    e.preventDefault(); // Prevent form submission if invalid
-                    alert("Please enter a valid phone number.");
-                    input.value = ''; // Clear the input
-                    input.focus(); // Focus back on the input field
-                } else {
-                    // Replace input value with full international number
-                    input.value = iti.getNumber();
-                }
-            });
-        });
-    });
-
 </script>
 
 
@@ -1699,5 +1427,3 @@
         $('#myModal').delay(800).fadeIn(400);
     }, 8000);
 </script>
-
-</html>
