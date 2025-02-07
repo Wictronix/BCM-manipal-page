@@ -39,22 +39,14 @@
     </script>
 
     <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-KX29XGR');
-    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P33KDJSG');</script>
     <!-- End Google Tag Manager -->
 
     <!-- Gallabox WhatsApp
@@ -239,7 +231,7 @@
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX29XGR" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P33KDJSG" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -429,9 +421,16 @@
                 const formData = new FormData(form);
 
                 // Ensure phone number is formatted correctly
-                let phone = formData.get("phone").trim();
-                if (!phone.startsWith("+91")) {
+                let phone = formData.get("phone").trim().replace(/\D/g, ""); // Remove non-numeric characters
+                if (phone.length === 10) {
                     phone = "+91-" + phone;  // Add country code if missing
+                } else if (phone.startsWith("91") && phone.length === 12) {
+                    phone = "+91-" + phone.slice(2); // Ensure consistent format
+                } else if (phone.startsWith("+91") && phone.length === 13) {
+                    phone = "+91-" + phone.slice(3); // Handle already prefixed numbers
+                } else {
+                    alert("Invalid phone number format. Please enter a 10-digit number.");
+                    return;
                 }
 
                 // Ensure course is valid
@@ -504,7 +503,7 @@
                     your success today</p><br>
             </div>
 
-            <form action="https://nocodeform.io/f/67a630a817a9f3b9a5439737" method="post" name="form" id="myMobileForm">
+            <form method="post" name="form" id="myMobileForm">
                 <!-- <label>Name<span class="required">*</span></label> -->
                 <div> <input type="text" name="full_name" id="full_name" class="form-control"
                         placeholder="Enter Your Name" required> </div>
@@ -520,7 +519,7 @@
                 <!-- <label>Course <span class="required">*</span></label> -->
 
 
-                <div> <select name="course" class="form-control" id="specialization" style="margin-top:10px!important;"
+                <div> <select name="course" class="form-control" id="course" style="margin-top:10px!important;"
                         required>
                         <option value="" selected disabled>Select Your Course</option>
                         <option value="BBA">BBA</option>
@@ -570,21 +569,110 @@
                 </div>
 
 
-                <input type="hidden" name="source" id="source" class="form-control" value="Manipal" required>
-                <input type="hidden" name="form_name" id="form_name" class="form-control" value="Home">
-                <input type="hidden" name="sub_source" id="sub_source" class="form-control" value="">
-                <input type="hidden" name="utm_source" id="utm_source" class="form-control" value="">
-                <input type="hidden" name="utm_campaign" id="utm_campaign" class="form-control" value="">
-                <input type="hidden" name="utm_medium" id="utm_medium" class="form-control" value="">
-                <input type="hidden" name="utm_term" id="utm_term" class="form-control" value="">
-                <input type="hidden" name="page_url" id="page_url" class="form-control" value="">
+                <div>
+                    <select name="enquired_university" class="form-control" id="enquired_university" required>
+                        <option value="" selected disabled>Select Enquired University</option>
+                        <option value="MUJ">MUJ</option>
+                        <option value="SMU">SMU</option>
+                    </select>
+                </div>
+
+                <!-- Hidden Fields -->
+                <input type="hidden" name="source" id="source" value="Agents">
+                <input type="hidden" name="source_medium" id="source_medium" value="BCMT">
 
 
                 <button type="submit" name="submit" value="submit" class="sub-btn" id="button">Submit</button>
             </form>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById('myMobileForm');
 
+            if (!form) {
+                console.error("Error: Form element not found!");
+                return;
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent direct form submission
+
+                // Get form data
+                const formData = new FormData(form);
+
+                // Ensure phone number is formatted correctly
+                let phone = formData.get("phone").trim().replace(/\D/g, ""); // Remove non-numeric characters
+                if (phone.length === 10) {
+                    phone = "+91-" + phone;  // Add country code if missing
+                } else if (phone.startsWith("91") && phone.length === 12) {
+                    phone = "+91-" + phone.slice(2); // Ensure consistent format
+                } else if (phone.startsWith("+91") && phone.length === 13) {
+                    phone = "+91-" + phone.slice(3); // Handle already prefixed numbers
+                } else {
+                    alert("Invalid phone number format. Please enter a 10-digit number.");
+                    return;
+                }
+
+                // Ensure course is valid
+                const validCourses = ["BBA", "B.Com", "BCA", "MBA", "M.Com", "MA.JMC", "MCA", "BA", "MA in English", "MA in Sociology", "MA in Political Science"];
+                let course = formData.get("course").trim();
+                if (!validCourses.includes(course)) {
+                    alert("Invalid course selection. Please choose a valid course.");
+                    return;
+                }
+
+                // Ensure university selection
+                let university = formData.get("enquired_university").trim();
+                if (!["MUJ", "SMU"].includes(university)) {
+                    alert("Invalid university selection. Please choose MUJ or SMU.");
+                    return;
+                }
+
+                // Construct LeadSquared API JSON request
+                const leadSquaredData = [
+                    { "Attribute": "FirstName", "Value": formData.get("full_name").trim() },
+                    { "Attribute": "EmailAddress", "Value": formData.get("email").trim() },
+                    { "Attribute": "Phone", "Value": phone },
+                    { "Attribute": "mx_course_applying_for", "Value": course },
+                    { "Attribute": "Source", "Value": "Agents" },
+                    { "Attribute": "Source Medium", "Value": "BCMT" },
+                    { "Attribute": "mx_Mobile", "Value": phone },
+                    { "Attribute": "mx_Enquired_University", "Value": university }
+                ];
+
+                // LeadSquared API URL
+                const leadsquaredAPI = "https://lapps-in21.leadsquared.com/executebylapptoken?name=da_54036_e738136c&stage=Live&xapikey=402809e910794df692e68da913bfee87";
+
+                // Send data to LeadSquared API
+                fetch(leadsquaredAPI, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-api-key': '402809e910794df692e68da913bfee87',
+                    },
+                    body: JSON.stringify(leadSquaredData)
+                })
+                    .then(response => response.json())
+                    .then(responseData => {
+                        console.log("Response from LeadSquared API:", responseData);
+                        if (responseData.statusCode === 200 || responseData.message.includes("Lead Already Exists")) {
+                            // ✅ Dynamically set the action to NoCodeForm
+                            form.setAttribute("action", "https://nocodeform.io/f/67a630a817a9f3b9a5439737");
+
+                            // ✅ Ensure proper form submission
+                            HTMLFormElement.prototype.submit.call(form);
+                        } else {
+                            alert("LeadSquared API Error: " + responseData.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error sending data to LeadSquared API:", error);
+                        alert("Error sending data to LeadSquared API. Please check the console.");
+                    });
+            });
+        });
+    </script>
 
     <div id="approvals">
         <div class="container">
